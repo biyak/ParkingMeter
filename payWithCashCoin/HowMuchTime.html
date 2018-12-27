@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HowMuchTime</title>
+	</head>
+
+	<body>
+		<div style="background-color:#fff4f5">
+			<h2 id="company">
+				<span style='color: #6888aa'>parking</span><span style='color: #00b883'>meter</span>
+			</h2>
+			<p>
+				How much time do you want to park for?
+			</p>
+			<!-- display current time -->
+			Start Time: <strong id="currentTime"></strong> 
+			<!-- give the user choice of upto two hours to park -->
+			<p> Duration: <select id="choice">
+					<option id = "halfHour" > 30 minute </option>
+ 					<option id="oneHour"> 60 minute</option>
+  					<option id="oneAndHalfHour">90 minute</option>
+  					<option id="twoHour">120 minute</option>
+				</select>
+			</p>
+
+			<!-- show total amount due on click-->
+				<button onclick="total()" >
+					Amount Due
+				</button>
+
+			<!-- show the total based on previous page option -->
+			<p id= "total"></p>
+
+			<a href="coinselected.html">
+				<button id="enter" disabled="true">
+					Payment Options
+				</button>
+			</a>
+
+			<script>
+				
+					var date = new Date();
+					var hour = date.getHours();
+					var minute = date.getMinutes();
+		
+					//get the current time and display
+					document.getElementById("currentTime").innerHTML = String(hour) + ":" + String(minute);
+					
+				
+//select amount based on option selected
+				function total() {
+					document.getElementById("enter").disabled = false;
+					if (document.getElementById("halfHour").selected == true){
+						document.getElementById("total").innerHTML = "Total Due: $3";
+					}
+					if (document.getElementById("oneHour").selected == true){
+						document.getElementById("total").innerHTML = "Total Due: $6";
+					}
+					if (document.getElementById("oneAndHalfHour").selected == true){
+						document.getElementById("total").innerHTML = "Total Due: $9";
+					}
+					if (document.getElementById("twoHour").selected == true){
+						document.getElementById("total").innerHTML = "Total Due: $12";
+					}	
+	}
+			</script>
+		</div>
+		<footer style="text-align: center;">
+  			<p> <button id="change" style="background-color: yellow;" disabled="true">Collect Change</button></p>
+        <p> <button id="ticket" style="background-color: grey">Ticket Slot</button></p>
+		</footer>
+	</body>
+</html>

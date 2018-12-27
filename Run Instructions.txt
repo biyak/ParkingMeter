@@ -1,0 +1,9 @@
+Run Instructions:
+
+Open the link called "HomeScreen.html" in a web browser to begin the program.
+
+It is recommended to have your browser window size be half the screen. See note below.
+
+
+Note: the back and forward arrows on some of the pages may not be centered on screen.
+In a real static parking meter window, the arrows should be static for a static window size. We just had some trouble implementing their positioning in HTML as the window size affects their position. If you reduce the size of your browser so that it's half your computer screen, the positioning of the left and right arrow buttons should be optimal. 

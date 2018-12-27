@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+	<!-- Import css file to style the webpage -->
+	<link rel="stylesheet" type="text/css" href="../parkingstyle.css">
+
+
+	<!-- For Google icons (for the arrow buttons) -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+	<!-- Title of the webpage to appear on browser tab/window -->
+	<title>Parking Meter</title>
+	
+</head>
+<body onload="load();">
+	</div>
+	<!-- The header will contain the company logo and name. -->
+	<header>
+		<!-- Use h2 to make the company name the size and style of h2. Group the logo and company name together using span so that they will appear inline/horizontally on one line. Style the span with colours so that the words in the company name will be different colours. -->
+		<h2 id="company">
+		<span style='color: #6888aa'>parking</span><span style='color: #00b883'>meter</span>
+		</h2>
+	</header>
+	</div>
+	<!-- This first aside is where the credit card and cash insert go. -->
+	<aside>
+
+        <!-- The company name is given a special id so it can be styled differently. -->
+        <p> <button id="credit">Credit Card Machine</button></p>
+        <p> <button id="coin">Coin Slot</button></p>
+        <p> <button id="cash">Cash Slot</button></p>
+
+	</aside>
+
+	<!-- The right and left asides is where the back and next buttons go-->
+	<aside id="left">
+		
+		</button>
+
+	</aside>
+
+    <aside id="right">
+       
+    </aside>
+	
+	
+	<!-- Main screen contents -->
+	<main >
+		<div style="background-color: white">
+		<h1> Your Receipt: </h1>
+		<h2> Refund Amount: $6</h2>
+		<h2> For Remaining Hours: 3</h2>
+		<h3> Original Total: $10</h3>
+		<h3> Original # Hours: 5</h3>
+		
+		<h3 id="date">Date: </h3>
+		<script>
+			n =  new Date();
+			y = n.getFullYear();
+			m = n.getMonth() + 1;
+			d = n.getDate();
+			document.getElementById("date").innerHTML = "Date: "+ m + "/" + d + "/" + y;
+		</script>
+	</div>
+		
+		<h2> Collect your receipt below</h2>
+
+	</main>
+	<footer>
+        <!-- The company name is given a special id so it can be styled differently. -->
+        <p> <button id="glowingbutton2" onclick="window.location.href='ThankYou.html'">Collect Change/Receipt</button></p>
+        <p> <button id="ticket" >Ticket Slot</button></p>
+        
+    </footer>
+
+</body>
+</html>

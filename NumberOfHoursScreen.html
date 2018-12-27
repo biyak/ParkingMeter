@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<!-- Specify charset for proper validation -->
+	<meta charset="utf-8" />
+
+	<!-- Import css file to style the webpage -->
+	<link rel="stylesheet" type="text/css" href="parkingstyle.css">
+
+	<!-- Import javascript file -->
+	<script type="text/javascript" src="data.js"></script>
+
+	<!-- For Google icons (for the arrow buttons) -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+	<!-- Title of the webpage to appear on browser tab/window -->
+	<title>Parking Meter</title>
+</head>
+<body onload="load()">
+	<!-- Create a div element to group the header and nav tags together. -->
+	<div>
+	<!-- The header will contain the company logo and name. -->
+	<header>
+		<!-- Use h2 to make the company name the size and style of h2. Group the logo and company name together using span so that they will appear inline/horizontally on one line. Style the span with colours so that the words in the company name will be different colours. -->
+		<h2 id="company">
+		<span style='color: #6888aa'>parking</span><span style='color: #00b883'>meter</span>
+		</h2>
+	</header>
+	</div>
+	<!-- This first aside is where the credit card and cash insert go. -->
+	<aside>
+
+        <!-- The company name is given a special id so it can be styled differently. -->
+        <p> <button id="credit">Credit Card Machine</button></p>
+        <p> <button id="coin">Coin Slot</button></p>
+        <p> <button id="cash">Cash Slot</button></p>
+
+	</aside>
+
+	<!-- The right and left asides is where the back and next buttons go-->
+	<aside id="left">
+		<button onclick="window.location.href='HomeScreen.html'" class="back-button">
+		<img 
+			src="back-arrow.png" 
+			style="height:150%; width: 150%"
+		>
+		</button>
+
+	</aside>
+
+	<aside id="right">
+		<button onclick="sendData()"class="back-button">
+			<img 
+				src="back-arrow.png" 
+				style="height: 150%; width: 150%; transform: rotate(90deg);transform: scaleX(-1)"
+			>
+		</button>
+	</aside>
+	
+	<!-- Main screen contents -->
+	<main >
+
+		
+		<div id="totalHours">
+            <h1>Total: <span id="total"></span></h1>
+			<h1># Hours: <span id="hours"></span></h1>
+		</div>
+		<script>
+			function displayHour(){
+				var input = document.getElementById("NumHours").value;
+				document.getElementById("hours").innerHTML = input;
+					return input;
+			}
+			function total(){
+				var input = document.getElementById("NumHours").value;
+				console.debug(input)
+				var total = parseFloat(input)*2;
+				document.getElementById("total").innerHTML = "$"+String(total);
+					return String(total);
+			}
+
+			function load(){
+				console.log(document.location.href)
+				if (document.location.href.indexOf('?') > -1){
+  					loadURLComplex();
+				} else {
+					document.getElementById('total').innerHTML = "$1";
+        			document.getElementById('hours').innerHTML = "0.5";
+				}
+        	}
+
+        	function loadURLComplex() {
+			    var url = document.location.href,
+			    params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+			    for (var i = 0, l = params.length; i < l; i++){
+			        tmp = params[i].split('=');
+			        data[tmp[0]] = tmp[1];
+			    }
+			    document.getElementById('total').innerHTML = '$' + data.total;
+        		document.getElementById('hours').innerHTML = data.hours;
+        		document.getElementById('NumHours').value = data.hours;
+        	}
+
+  			function sendData() {
+  				url = 'CashOrCreditScreen.html?hours=' + encodeURIComponent(displayHour()) + '&total=' + encodeURIComponent(total());
+
+    			document.location.href = url;
+  			}
+		</script>	
+		<div>
+			<h1>How many hours would you like to park for?</h1>
+        </div>
+
+<!-- HOUR SELECTOR :D -->
+        <div class="number-input">
+			<button onclick="this.parentNode.querySelector('input[type=number]').stepDown();total(),displayHour()" ></button>
+			<form id="form">
+			<input class="quantity" min="0.5" step="0.5" name="quantity" value="0.5" type="number" id="NumHours">
+			</form>
+			<button onclick="this.parentNode.querySelector('input[type=number]').stepUp();total(),displayHour()" class="plus"></button>		</div>
+
+        <div class="RateBox">
+            Rate: $2 / hour
+        </div>
+
+
+	</main>
+
+	<!-- The right sidebar will display the credit card slot at the top and then one slot for coins and one slot for cash. -->
+
+
+	<!-- The footer of the page will display the change retrieval box and the ticket slot. -->
+    <footer>
+        <!-- The company name is given a special id so it can be styled differently. -->
+        <p> <button id="change">Collect Change</button></p>
+        <p> <button id="ticket">Ticket Slot</button></p>
+        
+    </footer>
+
+</body>
+</html>

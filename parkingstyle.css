@@ -1,0 +1,596 @@
+/* Style the entire body of the page. */
+body {
+	/* Set the background to be white for white space design purposes. */
+	background: #e2e2e2;
+	/* Flush all elements against the edges of the screen so the background doesn't show on the sides. */
+	margin: 0px;
+}
+/* ---------------------------------------- */
+/* Style the header to contain a logo beside the company name */
+
+
+
+/* Style the header (the logo + company name section). */
+header {
+	/* Chose a bold font to make the title pop against the white background. */
+	font-weight: bold;
+	font-family: Verdana, Geneva, sans-serif;
+    /* Center alignment and padding for organized and spaced out aesthetics. */
+    text-align: center;
+    padding: 1px 10px;
+    background: white;
+}
+/* Style the main section (the area between the nav section and the footer). */
+main {
+	/* Center align to follow the center align design style. */
+	text-align: center;
+	/* Add padding for white space. */
+	padding: 16px;
+	/* A light grey background that adds colour but does not distract from the main content. */
+	background: #e2e2e2;
+	/* Same font as navigation menu to keep the page flow consistent. */
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Style the form input field boxes. */
+input[type=text], input[type=password] {
+    /* Set the width to 100% so that the field box spans the width of the form section. */
+    width: 50%;
+    /* Add a top margin so that there is a tiny bit of space between the field and the text above it. 
+    Set the left margin to 0px so that the center alignment isn't ruined. */
+    margin: 5px 0px;
+    /* Add some padding for white space. */
+    padding: 10px 20px;
+    /* Add a slight border to highlight the field. */
+    border: 1px solid #C0B298;
+    /* Round the corners of the field box to give a softer feel. */
+    border-radius: 4px;
+    /* Add this to prevent the border from extending to the right and out of the form area. */
+    box-sizing: border-box;
+    /* Center align text to remain consistent with field titles */
+    text-align: center;
+    font-size: 30px;
+}
+
+p {
+	font-size: 15px;
+	color: #00b883;
+}
+
+/* ---------------------------------------- */
+/* Style the footer. */
+footer {
+	/* The same background as the navigation bar to create a uniform look. */
+	background: #6888AA;
+	/* Center align text with same font as above for consistency. */
+	text-align: center;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;  
+	/* Add padding for visual white space. */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/* Keep footer at bottom of page. */
+	vertical-align: bottom;
+}
+
+/* Style footer content. */
+footer p {
+	/* Small amount of padding and margin to add some white space but also keep footer relatively short in height. */
+	padding-bottom: 1px;
+	padding-top: 1px;
+	margin: 5px;
+}
+
+/* Create a sticky footer to ensure the footer is at the bottom of the main content and screen.*/
+html, body {
+	/* 100% height ensures that the website content (including the cover) fits the height of the screen perfectly. */
+	height: 100%;
+}
+body {
+	/* The flex property expands the element to fill available space. This is needed to expand a short body to ensure the footer sits at the bottom and does not float in the middle of the screen. */
+	display: flex;
+	/* Since the footer is at the bottom, the flex direction must be filled in the vertical/column direction. */
+	flex-direction: column;
+}
+main {
+	/* The main element (where the main content is) is the one that needs to be expanded/filled. 
+	   1 is set for flex-growth.*/
+	flex: 1 0 auto;
+	right: 0;
+}
+footer {
+	flex-shrink: 0;
+}
+/* ---------------------------------------- */
+/* @media is used maintain a responsive design style for different window widths and devices. 
+   Style for windows with larger widths.
+*/
+@media screen and (min-width: 500px){
+	/* Modify the navigation bar so that the links are displayed horizontally rather than vertically. */
+	
+	/* Increase the header font size because the window size is larger (i.e. at least 500px).
+	   This will allow for a better view on the eyes.
+	 */
+	header h2 {
+		font-size: 50px;
+	}
+
+	/* Align the navigation menu elements to be center aligned and spaced out equally. */
+	nav ul {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	/* Align the navigation menu elements horizontally (without this they would align vertically). */
+	nav ul li {
+		display: inline-block;
+	}
+}
+
+/* Style for windows with larger heights. */
+@media screen and (min-height: 060px){
+	/* Increase text field box size for better viewing. */
+	input[type=text], input[type=password] {
+		padding: 15px;
+	}
+	
+	/* Increase font size for better visibility. */
+	header, nav, main {
+		font-size: 105%;
+	}
+}
+ 
+/* ---------------------------------------- */
+/* Style the "Get Current Location" button */
+#btn1,#btn2,#btn3,#btn4,#btn5,#btn6,#btn7,#btn8,#btn9,#btn0 {
+	color: white;
+	background-color: #00b883;
+	height: 40px;
+	width: 40px;
+	border: none;
+	border-radius: 10px;
+	margin-bottom: 3px;
+}
+
+#btnDel {
+	color: white;
+	background-color: #00b883;
+	height: 40px;
+	width: 100px;
+	border: none;
+	border-radius: 10px;
+}
+
+.back-button {
+	border: none;
+    /* Round the box corners to give a softer and consistent feel. */
+    border-radius: 80px;
+    /* Same colour as the "go" in company for semantic and consistent reasons. */
+	margin-right: 10px;
+	background-color: transparent
+}
+
+.back-button:active{
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+.cancel-button{
+	background-color: red;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	margin: 4px 2px;
+}
+.back-button:disabled{
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.red-button {
+	border: none;
+    /* Round the box corners to give a softer and consistent feel. */
+    border-radius: 80px;
+    /* Same colour as the "go" in company for semantic and consistent reasons. */
+	margin-right: 10px;
+	background-color: transparent;
+	-webkit-filter: hue-rotate(200deg); /* Safari 6.0 - 9.0 */
+		filter: hue-rotate(200deg);
+}
+
+
+/* ---------------------------------------- */
+/* Style the "Debit Machine" button */
+.money-button {
+	border: none;
+    /* Round the box corners to give a softer and consistent feel. */
+    border-radius: 100%;
+    /* Same colour as the "go" in company for semantic and consistent reasons. */
+    background-color: white;
+}
+
+aside {
+	height: 100%;
+    width: 80px;
+    position: fixed;
+    z-index: 0;
+/*    top: 0;*/
+    right: 0;
+    background-color: grey;
+    overflow-x: hidden;
+    padding-top: 130px;
+}
+
+#totalHours {
+	background-color: lightGrey;
+	padding: 1px 0 1px 0;
+}
+
+#right, #left {
+	background-color: transparent;
+	width: 70px;
+	margin-top: 25%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#right {
+	margin-right: 80px;
+}
+
+#left {
+	left: 0;
+}
+
+header, footer {
+	margin-right: 80px;
+}
+
+main {
+	margin-right: 150px;
+	margin-left: 70px;
+}
+
+#credit {
+	background-color: green;
+	height: 100px;
+	width: 100%
+}
+
+#coin {
+	background-color: orange;
+	width: 100%;
+	height: 70px;
+}
+
+#cash {
+	background-color: yellow;
+	width: 100%;
+	height: 70px;
+}
+
+#change {
+	background-color: lightgreen;
+	width: 50%;
+	height: 50%;
+	padding: 7px
+}
+
+#ticket {
+	background-color: lightblue;
+	width: 50%;
+	height: 50%;
+	padding: 7px
+}
+
+
+.RateBox{
+	height: 30px;
+	width: 100%;
+	background-color: rgb(141, 138, 138);
+	margin-top: 40px;
+}
+
+/* ---------------------------------------- */
+/* GLOWING BUTTONS / ITEMS */
+
+#bigbutton{
+	background-color: aquamarine;
+	width: 150px;
+	height: 150px;
+	margin-top: 30px;
+	background-color: #004A7F;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Arial;
+	font-size: 20px;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	
+	-webkit-animation: glowing 1500ms infinite;
+	-moz-animation: glowing 1500ms infinite;
+	-o-animation: glowing 1500ms infinite;
+	animation: glowing 1500ms infinite;
+	
+  }
+  @-webkit-keyframes glowing {
+	0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @-moz-keyframes glowing {
+	0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @-o-keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+
+#glowingbutton2{
+	width: 50%;
+	height: 50%;
+	padding: 7px
+	margin-top: 30px;
+	background-color: #004A7F;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-animation: glowing 1500ms infinite;
+	-moz-animation: glowing 1500ms infinite;
+	-o-animation: glowing 1500ms infinite;
+	animation: glowing 1500ms infinite;
+  }
+  @-webkit-keyframes glowing {
+	0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @-moz-keyframes glowing {
+	0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @-o-keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+  #glowingbutton{
+	width: 100%;
+	height: 80px;
+	margin-top: 30px;
+	background-color: #004A7F;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-animation: glowing 1500ms infinite;
+	-moz-animation: glowing 1500ms infinite;
+	-o-animation: glowing 1500ms infinite;
+	animation: glowing 1500ms infinite;
+  }
+  @-webkit-keyframes glowing {
+	0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @-moz-keyframes glowing {
+	0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @-o-keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+  
+  @keyframes glowing {
+	0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+	50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+	100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+/* BEGINNING OF NUMBER INPUT STYLE CHANGE
+Better signifiers than the original */
+
+  input[type="number"] {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+  }
+  
+  .number-input {
+	border: 2px solid red;
+	display: inline-flex;
+  }
+  
+  .number-input,
+  .number-input * {
+	box-sizing: border-box;
+  }
+  
+  .number-input button {
+	outline:none;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	cursor: pointer;
+	margin: 0;
+	position: relative;
+  }
+  
+  .number-input button:before,
+  .number-input button:after {
+	display: inline-block;
+	position: absolute;
+	content: '';
+	width: 1rem;
+	height: 2px;
+	background-color: #212121;
+	transform: translate(-50%, -50%);
+  }
+  .number-input button.plus:after {
+	transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  .number-input input[type=number] {
+	font-family: sans-serif;
+	max-width: 5rem;
+	padding: .5rem;
+	border: solid #ddd;
+	border-width: 0 2px;
+	font-size: 2rem;
+	height: 3rem;
+	font-weight: bold;
+	text-align: center;
+  }
+
+/* END OF NUMBER INPUT STYLE CHANGE*/
+
+  /*
+ONLY WHEN BUTTONS ARE PRESSED:
+They will turn red. 
+Better signifier, to let the user know they just pressed a button. 
+*/
+
+#ticket:active {
+	background-color: red
+}
+
+#credit:active {
+	background-color: red;
+	margin-top: 100 px;
+}
+
+#coin:active {
+	background-color: red
+}
+
+#cash:active {
+	background-color: red
+}
+
+#change:active {
+	background-color: red
+}
+
+
+#ticket:active {
+	background-color: red
+}
+
+#bigbutton:active {
+	background-color: green
+}
+
+}
+img.arrow {
+	height: 60%; 
+	width: 60%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.ticket {
+	color: black;
+}
+
+a.refund-button {
+	color: white;
+}
+
+/* -------------------------------------------*/
+/* LOADER */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #6888AA;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  display: inline-block;
+}
+
+/* style the loader on thank you page */
+.load {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #6888AA;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 5s linear infinite; /* Safari */
+  animation: spin 5s linear infinite;
+  display: inline-block;
+  scale: 0.1;
+}
+
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.finish-button{
+	background-color: green;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	margin: 4px 2px;
+}

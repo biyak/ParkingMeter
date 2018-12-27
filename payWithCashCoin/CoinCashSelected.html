@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Coin/CashSelected</title>
+	</head>
+
+	<body>
+		<div style="background-color:#fff4f5">
+			<h2 id="company">
+				<span style='color: #6888aa'>parking</span><span style='color: #00b883'>meter</span>
+			</h2>
+			<!-- go back to previous page -->
+			<a href="howmuchtime.html">
+				<button>Back</button>
+			</a>
+			<p>How would you like to pay?</p>
+			<button onclick ="cash()">Cash/Coin</button>
+			<p id="cash/coin"></p>
+			<button id= "pay" onclick="pay()" disabled="true">Pay</button>
+
+			<p><strong id="Thanks"></strong></p>
+			<button id="yes" style="display: none;" disabled="true" onclick="yes()">Yes</button>
+			<button id="no" style="display: none;" disabled="true" onclick="no()">No</button>
+			<p><strong id="bye"></strong></p>
+			<script type="text/javascript">
+				function cash(){
+					document.getElementById("cash/coin").innerHTML = "Please pay below";
+					document.getElementById("pay").disabled = false;
+				}
+				function pay(){
+					document.getElementById("change").disabled = false;
+				}
+				function getChange(){
+					document.getElementById("Thanks").innerHTML = "Change Returned and ticket printed. Would you like a reciept?";
+					document.getElementById("yes").style.display = "block";
+					document.getElementById("yes").disabled = false;
+					document.getElementById("no").style.display = "block";
+					document.getElementById("no").disabled = false;
+				}
+				function yes(){
+					document.getElementById("bye").innerHTML = "reciept printed. Have a nice day.";
+				}
+				function no(){
+					document.getElementById("bye").innerHTML = "Have a nice day.";
+				}
+			</script>
+		</div>
+		<footer style="text-align: center;">
+  			<p> <button id="change" style="background-color: yellow;" onclick="getChange()" disabled="true">Collect Change</button></p>
+        <p> <button id="ticket" style="background-color: grey">Ticket Slot</button></p>
+		</footer>
+	</body>
+</html>

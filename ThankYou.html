@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+	<!-- Specify charset for proper validation -->
+	<meta charset="utf-8" />
+
+	<!-- For loader -->
+	<meta name="viewport" content="width=device-width, initial-scale= 10">
+
+	<!-- To change screen -->
+	<meta http-equiv="refresh" content="3;url=HomeScreen.html" />
+
+	<!-- Import css file to style the webpage -->
+	<link rel="stylesheet" type="text/css" href="parkingstyle.css">
+
+	<!-- Title of the webpage to appear on browser tab/window -->
+	<title>Parking Meter</title>
+</head>
+<body>
+	<!-- Create a div element to group the header and nav tags together. -->
+	<div>
+	<!-- The header will contain the company logo and name. -->
+	<header>
+		<!-- Use h2 to make the company name the size and style of h2. Group the logo and company name together using span so that they will appear inline/horizontally on one line. Style the span with colours so that the words in the company name will be different colours. -->
+		<h2 id="company">
+		<span style='color: #6888aa'>parking</span><span style='color: #00b883'>meter</span>
+		</h2>
+	</header>
+	</div>
+	<!-- This first aside is where the credit card and cash insert go. -->
+	<aside>
+
+        <!-- The company name is given a special id so it can be styled differently. -->
+        <p> <button id="credit">Credit Card Machine</button></p>
+        <p> <button id="coin">Coin Slot</button></p>
+        <p> <button id="cash">Cash Slot</button></p>
+
+	</aside>
+
+	<!-- Main screen contents -->
+	<main>
+		<div id="totalHours">
+		<h1>Thank you </h1>
+		<h2>for using <span style='color: #6888aa'>parking</span><span style='color: #00b883'>meter</span></h2>
+		<div class="load" id="load"></div>
+		<button id="glowingbutton" onclick="window.location.href='HomeScreen.html'">Finish</button>
+        </div>
+
+	</main>
+
+	<!-- The right sidebar will display the credit card slot at the top and then one slot for coins and one slot for cash. -->
+
+
+	<!-- The footer of the page will display the change retrieval box and the ticket slot. -->
+    <footer>
+        <!-- The company name is given a special id so it can be styled differently. -->
+        <p> <button id="change">Collect Change</button></p>
+        <p> <button id="ticket"><a class="ticket" href="">Ticket Slot</a></button></p>
+        
+    </footer>
+
+</body>
+</html>
